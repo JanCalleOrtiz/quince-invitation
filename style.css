@@ -357,3 +357,152 @@ body {
         transition: none;
     }
 }
+
+/* BILINGUAL LANGUAGE SELECTION */
+
+[hidden] {
+    display: none !important;
+}
+
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+
+.language-btn {
+    min-height: 48px;
+    min-width: 120px;
+    padding: 12px 20px;
+
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    color: #854F5B;
+
+    background: rgba(255, 249, 242, 0.88);
+    border: 1px solid #D8B68A;
+    border-radius: 30px;
+
+    box-shadow: 0 4px 15px rgba(133, 79, 91, 0.15);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-btn.selected {
+    background: #B76E79;
+    color: white;
+    border-color: #D8B68A;
+}
+
+.language-btn:active {
+    transform: scale(0.97);
+}
+
+.language-btn:focus-visible,
+.switch-language:focus-visible {
+    outline: 3px solid #854F5B;
+    outline-offset: 3px;
+}
+
+/* INVITATION DETAILS */
+
+.invitation-details {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    padding: 70px 20px 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(255, 249, 242, 0.88),
+            rgba(245, 221, 224, 0.94)
+        ),
+        url("assets/backgrounds/royal-entrance.png");
+
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.details-card {
+    width: 100%;
+    max-width: 440px;
+    padding: 35px 22px;
+
+    background: rgba(255, 249, 242, 0.9);
+    border: 1px solid #D8B68A;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 35px rgba(133, 79, 91, 0.15);
+}
+
+.details-card h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(48px, 12vw, 70px);
+    font-weight: 400;
+    color: #B76E79;
+    margin: 18px 0;
+}
+
+.details-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #854F5B;
+    margin: 28px 0 10px;
+}
+
+.details-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #854F5B;
+}
+
+.switch-language {
+    min-height: 44px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+
+    background: #B76E79;
+    color: white;
+    border: 1px solid #D8B68A;
+    border-radius: 30px;
+
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+/* SMALL MOBILE SCREENS */
+
+@media (max-width: 375px) {
+    .language-buttons {
+        gap: 8px;
+    }
+
+    .language-btn {
+        min-width: 108px;
+        padding: 12px 14px;
+        font-size: 11px;
+    }
+
+    .details-card {
+        padding: 28px 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .language-btn {
+        transition: none;
+    }
+}
