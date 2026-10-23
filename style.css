@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Great+Vibes&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cinzel', serif;
+    background-color: #FFF9F2;
+}
+
+.hero {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 24px;
+
+    background:
+        linear-gradient(
+            rgba(255, 249, 242, 0.08),
+            rgba(133, 79, 91, 0.15)
+        ),
+        url("assets/backgrounds/royal-entrance.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content {
+    max-width: 500px;
+    padding: 30px 20px;
+}
+
+.subtitle {
+    font-size: 14px;
+    letter-spacing: 3px;
+    color: #854F5B;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(55px, 12vw, 95px);
+    font-weight: 400;
+    color: #B76E79;
+    margin: 30px 0;
+}
+
+.description {
+    color: #854F5B;
+    letter-spacing: 3px;
+}
+
+button {
+    margin-top: 40px;
+    padding: 15px 35px;
+    background: #B76E79;
+    color: white;
+    border: 1px solid #D8B68A;
+    border-radius: 30px;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #854F5B;
+    transform: scale(1.05);
+}
