@@ -506,3 +506,90 @@ body {
         transition: none;
     }
 }
+
+/* MOBILE LAYOUT REFINEMENTS  */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 24px 16px;
+        background-position: center center;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 340px;
+        padding: 20px 8px;
+    }
+
+    /* Smaller, elegant title */
+    .hero h1 {
+        font-size: clamp(40px, 10.5vw, 52px);
+        line-height: 1.25;
+        margin: 22px 0;
+        overflow-wrap: normal;
+    }
+
+    /* Welcome text */
+    .hero .subtitle {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        line-height: 1.7;
+    }
+
+    /* Language instruction */
+    .hero .description {
+        font-size: 10px;
+        letter-spacing: 1px;
+        line-height: 1.8;
+        max-width: 270px;
+        margin: 0 auto;
+        text-wrap: balance;
+    }
+
+    /* Language buttons */
+    .language-buttons {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 25px;
+    }
+
+    .language-btn {
+        min-width: 0;
+        width: 125px;
+        min-height: 48px;
+        padding: 12px 14px;
+        font-size: 11px;
+        background: rgba(255, 249, 242, 0.94);
+    }
+
+    #openInvitation {
+        margin-top: 24px;
+        font-size: 11px;
+    }
+}
+
+/* Extra-small phones */
+
+@media (max-width: 360px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero .subtitle {
+        font-size: 9px;
+    }
+
+    .language-btn {
+        width: 115px;
+    }
+}
+
+.spanish-instruction {
+    display: block;
+    margin-top: 5px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
