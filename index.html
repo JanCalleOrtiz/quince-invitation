@@ -1,150 +1,73 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-
-    <!-- Mobile responsiveness -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <meta name="theme-color" content="#FFF9F2">
-
-    <meta name="description"
-          content="You are cordially invited to a Royal Rose Gold Quinceañera celebration.">
-
-    <title>Royal Rose Gold Quinceañera</title>
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#FFF9F2">
+  <meta name="description" content="A royal rose gold quinceañera invitation">
+  <title>Royal Rose Gold Quinceañera</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<main>
+  <!-- Existing palace entrance -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="subtitle" data-i18n="welcome">Welcome • Bienvenidos</p>
+      <h1>Mis XV Años</h1>
+      <div class="language-instruction" id="languagePrompt">
+        <p>Choose Your Language</p>
+        <p lang="es">Elige Tu Idioma</p>
+      </div>
+      <div class="language-buttons" id="languageButtons" role="group" aria-label="Choose your language / Elige tu idioma">
+        <button type="button" class="language-btn" data-lang="en" aria-pressed="false">English</button>
+        <button type="button" class="language-btn" data-lang="es" aria-pressed="false" lang="es">Español</button>
+      </div>
+      <button type="button" id="openInvitation" hidden data-i18n="open">Open Invitation</button>
+    </div>
+  </section>
 
-    <main>
+  <!-- Three-stage animated envelope -->
+  <section class="envelope-section" id="envelopeSection" hidden aria-label="Royal invitation envelope">
+    <button type="button" class="back-button" id="backToWelcome" data-i18n="back">← Back</button>
+    <div class="envelope-scene" id="envelopeScene">
+      <p class="envelope-heading" data-i18n="special">A special invitation awaits</p>
+      <div class="envelope" id="envelope" aria-hidden="true">
+        <div class="envelope-back"></div>
+        <div class="invitation-letter">
+          <div class="letter-border">
+            <span class="letter-crown">♛</span>
+            <span class="letter-small" data-i18n="celebration">A Royal Celebration</span>
+            <span class="letter-title">Mis XV Años</span>
+            <span class="letter-note" data-i18n="letterNote">You are cordially invited</span>
+          </div>
+        </div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-front"></div>
+        <div class="wax-seal"><span>♛</span></div>
+      </div>
+      <button type="button" class="royal-button" id="unsealEnvelope" data-i18n="tapSeal">Open the Royal Envelope</button>
+      <button type="button" class="royal-button continue-button" id="continueInvitation" hidden data-i18n="continue">View Celebration Details</button>
+      <p class="envelope-hint" id="envelopeHint" data-i18n="hint">A royal celebration begins here</p>
+    </div>
+  </section>
 
-        <!-- Royal palace entrance -->
-        <section class="hero" id="home">
-
-            <div class="hero-content">
-
-                <!-- Welcome message -->
-                <p class="subtitle" data-i18n="welcome">
-                    Welcome • Bienvenidos
-                </p>
-
-                <!-- Main title -->
-                <h1>Mis XV Años</h1>
-
-                <!-- Language instructions -->
-                <div class="language-instruction"
-                     id="languagePrompt">
-
-                    <p>Choose Your Language</p>
-                    <p lang="es">Elige Tu Idioma</p>
-
-                </div>
-
-                <!-- Language selection -->
-                <div class="language-buttons"
-                     id="languageButtons"
-                     role="group"
-                     aria-label="Choose your language / Elige tu idioma">
-
-                    <button type="button"
-                            class="language-btn"
-                            data-lang="en"
-                            aria-pressed="false">
-                        English
-                    </button>
-
-                    <button type="button"
-                            class="language-btn"
-                            data-lang="es"
-                            aria-pressed="false"
-                            lang="es">
-                        Español
-                    </button>
-
-                </div>
-
-                <!-- Open invitation button -->
-                <button type="button"
-                        id="openInvitation"
-                        hidden
-                        data-i18n="open">
-                    Open Invitation
-                </button>
-
-            </div>
-
-        </section>
-
-        <!-- Invitation details -->
-        <section class="invitation-details"
-                 id="invitationDetails"
-                 hidden>
-
-            <!-- Language switch -->
-            <button type="button"
-                    id="switchLanguage"
-                    class="switch-language"
-                    aria-label="Switch invitation language">
-                English / Español
-            </button>
-
-            <div class="details-card">
-
-                <!-- Celebration heading -->
-                <p class="subtitle"
-                   data-i18n="celebration">
-                    A Royal Celebration
-                </p>
-
-                <h2>Mis XV Años</h2>
-
-                <!-- Invitation message -->
-                <p data-i18n="invitationMessage">
-                    You are cordially invited
-                    to celebrate this special day.
-                </p>
-
-                <!-- Date and time -->
-                <h3 data-i18n="dateHeading">
-                    Date & Time
-                </h3>
-
-                <p data-i18n="datePlaceholder">
-                    Date and time coming soon
-                </p>
-
-                <!-- Location -->
-                <h3 data-i18n="locationHeading">
-                    Location
-                </h3>
-
-                <p data-i18n="locationPlaceholder">
-                    Venue details coming soon
-                </p>
-
-                <!-- RSVP -->
-                <h3 data-i18n="rsvpHeading">
-                    RSVP
-                </h3>
-
-                <p data-i18n="rsvpPlaceholder">
-                    RSVP details coming soon
-                </p>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- JavaScript -->
-    <script src="script.js"></script>
-
+  <!-- Invitation reveal and celebration details -->
+  <section class="invitation-details" id="invitationDetails" hidden>
+    <button type="button" id="switchLanguage" class="switch-language" aria-label="Switch invitation language">English / Español</button>
+    <div class="details-card">
+      <p class="subtitle" data-i18n="celebration">A Royal Celebration</p>
+      <h2>Mis XV Años</h2>
+      <p data-i18n="invitationMessage">You are cordially invited to celebrate this special day.</p>
+      <h3 data-i18n="dateHeading">Date &amp; Time</h3>
+      <p data-i18n="datePlaceholder">Date and time coming soon</p>
+      <h3 data-i18n="locationHeading">Location</h3>
+      <p data-i18n="locationPlaceholder">Venue details coming soon</p>
+      <h3 data-i18n="rsvpHeading">RSVP</h3>
+      <p data-i18n="rsvpPlaceholder">RSVP details coming soon</p>
+    </div>
+  </section>
+</main>
+<script src="script.js"></script>
 </body>
 </html>
