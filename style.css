@@ -2,8 +2,17 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&display=swap');
 
-/* GLOBAL STYLES */
+/* Rose gold colors */
+:root {
+    --rose-gold: #B76E79;
+    --deep-rose: #713E4C;
+    --champagne: #D8B68A;
+    --ivory: #FFF9F2;
+    --blush-pink: #F5DDE0;
+    --soft-gold: #E8CDA5;
+}
 
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -19,28 +28,24 @@ html {
 body {
     width: 100%;
     min-height: 100vh;
-    background-color: #FFF9F2;
+    background-color: var(--ivory);
     font-family: 'Cinzel', serif;
-    color: #854F5B;
+    color: var(--deep-rose);
     overflow-x: hidden;
 }
 
-/* ROSE GOLD COLOR VARIABLES */
-
-:root {
-    --rose-gold: #B76E79;
-    --deep-rose: #854F5B;
-    --champagne: #D8B68A;
-    --ivory: #FFF9F2;
-    --blush-pink: #F5DDE0;
-    --soft-gold: #E8CDA5;
+button {
+    font-family: inherit;
+    touch-action: manipulation;
 }
 
-/* ROYAL PALACE OPENING BACKGROUND */
+[hidden] {
+    display: none !important;
+}
 
+/* Royal palace background */
 .hero {
     position: relative;
-
     width: 100%;
     min-height: 100vh;
     min-height: 100dvh;
@@ -50,7 +55,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    padding: 35px 18px;
+    padding: 32px 16px;
     text-align: center;
 
     background-image:
@@ -61,15 +66,14 @@ body {
         url("assets/backgrounds/royal-entrance.png");
 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
 
     overflow: hidden;
     isolation: isolate;
 }
 
-/* Subtle light overlay */
-
+/* Soft palace lighting */
 .hero::before {
     content: "";
     position: absolute;
@@ -77,7 +81,7 @@ body {
 
     background: radial-gradient(
         ellipse at center,
-        rgba(255, 249, 242, 0.12) 0%,
+        rgba(255, 249, 242, 0.14) 0%,
         transparent 75%
     );
 
@@ -85,78 +89,214 @@ body {
     z-index: 0;
 }
 
-/* INVITATION CONTENT */
-
+/* Opening invitation content */
 .hero-content {
     position: relative;
     z-index: 2;
 
     width: 100%;
-    max-width: 360px;
-
+    max-width: 390px;
     margin: 0 auto;
-    padding: 24px 10px;
+    padding: 22px 0;
 
     text-align: center;
 
-    animation: royalReveal 2s ease-out both;
+    animation: royalReveal 1.8s ease-out both;
 }
 
-/* INVITATION SUBTITLE */
-
+/* Welcome text */
 .subtitle {
     font-family: 'Cinzel', serif;
-    font-size: clamp(10px, 2.7vw, 13px);
-    font-weight: 500;
-
+    font-size: 12px;
+    font-weight: 600;
     letter-spacing: 2px;
     line-height: 1.7;
 
     color: var(--deep-rose);
-
-    text-shadow: 0 1px 6px rgba(255, 249, 242, 0.7);
-}
-
-/* MAIN QUINCEAÑERA TITLE */
-
-.hero h1 {
-    font-family: 'Great Vibes', cursive;
-
-    font-size: clamp(42px, 10vw, 62px);
-    font-weight: 400;
-    line-height: 1.2;
-
-    color: var(--rose-gold);
-
-    margin: 25px 0;
-
-    max-width: 100%;
-
-    overflow-wrap: break-word;
 
     text-shadow:
-        0 2px 8px rgba(255, 249, 242, 0.75),
-        0 1px 2px rgba(133, 79, 91, 0.15);
+        0 1px 5px rgba(255, 249, 242, 0.8);
 }
 
-/* CELEBRATION DESCRIPTION */
+.hero .subtitle {
+    margin-bottom: 14px;
+}
 
-.description {
-    font-family: 'Cinzel', serif;
+/* Elegant metallic rose-gold title */
+.hero h1 {
+    display: block;
+    width: 100%;
+    max-width: 100%;
 
-    font-size: clamp(11px, 3vw, 14px);
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(30px, 8.5vw, 52px);
     font-weight: 400;
+    line-height: 1.5;
 
-    letter-spacing: 2px;
-    line-height: 1.7;
+    white-space: nowrap;
+    overflow-wrap: normal;
+    word-break: normal;
+
+    margin: 10px auto 20px;
+    padding: 8px 0;
+
+    color: #995065;
+
+    background-image: linear-gradient(
+        110deg,
+        #874557 0%,
+        #B76E79 20%,
+        #E9B9AC 38%,
+        #FFF0CC 48%,
+        #B76E79 60%,
+        #965265 80%,
+        #874557 100%
+    );
+
+    background-size: 250% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter:
+        drop-shadow(0 2px 2px rgba(92, 43, 55, 0.45))
+        drop-shadow(0 0 5px rgba(255, 234, 201, 0.5));
+
+    animation: royalShimmer 7s ease-in-out infinite;
+}
+
+/* Metallic title shimmer */
+@keyframes royalShimmer {
+    0%, 100% {
+        background-position: 100% center;
+    }
+
+    50% {
+        background-position: 0% center;
+    }
+}
+
+/* Language instructions */
+.description {
+    max-width: 300px;
+    margin: 0 auto;
+
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.8;
 
     color: var(--deep-rose);
 
-    text-shadow: 0 1px 6px rgba(255, 249, 242, 0.7);
+    text-shadow:
+        0 1px 5px rgba(255, 249, 242, 0.85);
+
+    text-wrap: balance;
 }
 
-/* ROSE GOLD INVITATION BUTTON */
+.spanish-instruction {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
 
+/* Optional language instruction card */
+.language-instruction {
+    width: 100%;
+    max-width: 280px;
+
+    margin: 0 auto;
+    padding: 12px 16px;
+
+    background: rgba(255, 249, 242, 0.72);
+    border: 1px solid rgba(216, 182, 138, 0.65);
+    border-radius: 14px;
+
+    box-shadow:
+        0 4px 18px rgba(133, 79, 91, 0.1);
+
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.language-instruction p {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.8;
+
+    color: var(--deep-rose);
+    text-align: center;
+}
+
+.language-instruction p + p {
+    margin-top: 3px;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* Language selection buttons */
+.language-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.language-btn {
+    flex: 0 1 130px;
+    min-width: 0;
+    min-height: 48px;
+
+    padding: 12px 14px;
+
+    font-family: 'Cinzel', serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    color: var(--deep-rose);
+
+    background: rgba(255, 249, 242, 0.95);
+    border: 1.5px solid #C99A78;
+    border-radius: 30px;
+
+    box-shadow:
+        0 4px 14px rgba(133, 79, 91, 0.16);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.language-btn:hover {
+    transform: translateY(-2px);
+
+    background: #FFF9F2;
+
+    box-shadow:
+        0 6px 20px rgba(133, 79, 91, 0.25);
+}
+
+.language-btn.selected {
+    background: var(--rose-gold);
+    color: white;
+    border-color: var(--champagne);
+}
+
+.language-btn:active {
+    transform: scale(0.97);
+}
+
+/* Open invitation button */
 #openInvitation {
     display: inline-flex;
     justify-content: center;
@@ -165,7 +305,7 @@ body {
     min-height: 48px;
     max-width: 100%;
 
-    margin-top: 35px;
+    margin-top: 30px;
     padding: 15px 28px;
 
     background: linear-gradient(
@@ -186,7 +326,6 @@ body {
     letter-spacing: 0.5px;
 
     cursor: pointer;
-    touch-action: manipulation;
 
     box-shadow:
         0 5px 18px rgba(133, 79, 91, 0.25),
@@ -194,11 +333,8 @@ body {
 
     transition:
         transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease;
+        box-shadow 0.3s ease;
 }
-
-/* Button hover */
 
 #openInvitation:hover {
     transform: translateY(-3px) scale(1.03);
@@ -207,25 +343,21 @@ body {
         0 8px 25px rgba(133, 79, 91, 0.35);
 }
 
-/* Button press */
-
 #openInvitation:active {
     transform: scale(0.97);
 }
 
 /* Keyboard accessibility */
-
-#openInvitation:focus-visible {
+button:focus-visible {
     outline: 3px solid var(--deep-rose);
     outline-offset: 4px;
 }
 
-/* ELEGANT ENTRANCE ANIMATION */
-
+/* Elegant opening animation */
 @keyframes royalReveal {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(25px);
     }
 
     to {
@@ -234,55 +366,204 @@ body {
     }
 }
 
-/* SMALL MOBILE PHONES */
+/* Invitation details section */
+.invitation-details {
+    position: relative;
 
-@media (max-width: 375px) {
+    min-height: 100vh;
+    min-height: 100dvh;
 
+    padding: 70px 20px 50px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 249, 242, 0.88),
+            rgba(245, 221, 224, 0.94)
+        ),
+        url("assets/backgrounds/royal-entrance.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    text-align: center;
+}
+
+/* Invitation details card */
+.details-card {
+    width: 100%;
+    max-width: 440px;
+
+    padding: 35px 22px;
+
+    background: rgba(255, 249, 242, 0.93);
+    border: 1px solid var(--champagne);
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 35px rgba(133, 79, 91, 0.15);
+}
+
+/* Details title */
+.details-card h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(38px, 9vw, 70px);
+    font-weight: 400;
+    line-height: 1.4;
+
+    color: var(--rose-gold);
+
+    margin: 18px 0;
+}
+
+/* Details headings */
+.details-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    color: var(--deep-rose);
+
+    margin: 28px 0 10px;
+}
+
+/* Details text */
+.details-card p {
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--deep-rose);
+}
+
+/* Language switch button */
+.switch-language {
+    min-height: 44px;
+
+    margin-bottom: 20px;
+    padding: 10px 20px;
+
+    background: var(--rose-gold);
+    color: white;
+
+    border: 1px solid var(--champagne);
+    border-radius: 30px;
+
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+}
+
+.switch-language:hover {
+    transform: translateY(-2px);
+}
+
+/* Small mobile screens */
+@media (max-width: 600px) {
     .hero {
-        padding: 25px 12px;
+        padding: 24px 14px;
+        background-position: center;
     }
 
     .hero-content {
-        max-width: 320px;
-        padding: 18px 6px;
+        max-width: 100%;
+        padding: 18px 0;
+    }
+
+    .hero .subtitle {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+        margin-bottom: 12px;
     }
 
     .hero h1 {
-        font-size: 43px;
-        margin: 20px 0;
-    }
-
-    .subtitle {
-        font-size: 10px;
-        letter-spacing: 1.5px;
+        font-size: clamp(30px, 8.5vw, 48px);
+        margin: 10px auto 18px;
     }
 
     .description {
+        max-width: 270px;
         font-size: 11px;
-        letter-spacing: 1.5px;
+        letter-spacing: 0.8px;
+    }
+
+    .spanish-instruction {
+        font-size: 10px;
+    }
+
+    .language-buttons {
+        gap: 12px;
+        margin-top: 24px;
+    }
+
+    .language-btn {
+        flex-basis: 125px;
+        font-size: 11px;
+        padding: 12px 10px;
     }
 
     #openInvitation {
-        margin-top: 28px;
-        padding: 13px 22px;
+        margin-top: 24px;
         font-size: 11px;
+    }
+
+    .details-card {
+        padding: 30px 18px;
     }
 }
 
-/* TABLETS */
+/* Extra-small phones */
+@media (max-width: 375px) {
+    .hero {
+        padding: 22px 12px;
+    }
 
+    .hero h1 {
+        font-size: clamp(27px, 8.3vw, 31px);
+    }
+
+    .hero .subtitle {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .description {
+        font-size: 10px;
+    }
+
+    .language-buttons {
+        gap: 8px;
+    }
+
+    .language-btn {
+        flex-basis: 112px;
+        font-size: 11px;
+    }
+
+    .language-instruction {
+        max-width: 235px;
+    }
+}
+
+/* Tablets */
 @media (min-width: 768px) {
-
     .hero {
         padding: 50px 30px;
     }
 
     .hero-content {
-        max-width: 600px;
+        max-width: 650px;
     }
 
     .hero h1 {
-        font-size: clamp(68px, 8vw, 90px);
+        font-size: clamp(62px, 7vw, 86px);
     }
 
     .subtitle {
@@ -291,20 +572,29 @@ body {
     }
 
     .description {
+        max-width: 450px;
         font-size: 15px;
-        letter-spacing: 3px;
+        letter-spacing: 2px;
+    }
+
+    .spanish-instruction {
+        font-size: 13px;
+    }
+
+    .language-btn {
+        flex-basis: 155px;
+        font-size: 13px;
+        padding: 15px 24px;
     }
 
     #openInvitation {
-        padding: 16px 35px;
         font-size: 14px;
+        padding: 16px 35px;
     }
 }
 
-/* DESKTOP SCREENS */
-
+/* Desktop screens */
 @media (min-width: 1200px) {
-
     .hero-content {
         max-width: 750px;
     }
@@ -318,457 +608,46 @@ body {
     }
 }
 
-/* SHORT PHONE SCREENS */
-
+/* Short phone screens */
 @media (max-height: 650px) {
-
     .hero {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 18px;
+        padding-bottom: 18px;
     }
 
     .hero-content {
-        padding-top: 12px;
-        padding-bottom: 12px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
     .hero h1 {
-        margin: 15px 0;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    .language-buttons {
+        margin-top: 16px;
     }
 
     #openInvitation {
-        margin-top: 20px;
+        margin-top: 18px;
     }
 }
 
-/* REDUCED MOTION ACCESSIBILITY */
-
+/* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
-
     html {
         scroll-behavior: auto;
     }
 
-    .hero-content {
-        animation: none;
-    }
-
-    #openInvitation {
-        transition: none;
-    }
-}
-
-/* BILINGUAL LANGUAGE SELECTION */
-
-[hidden] {
-    display: none !important;
-}
-
-.language-buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 25px;
-}
-
-.language-btn {
-    min-height: 48px;
-    min-width: 120px;
-    padding: 12px 20px;
-
-    font-family: 'Cinzel', serif;
-    font-size: 12px;
-    color: #854F5B;
-
-    background: rgba(255, 249, 242, 0.88);
-    border: 1px solid #D8B68A;
-    border-radius: 30px;
-
-    box-shadow: 0 4px 15px rgba(133, 79, 91, 0.15);
-
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.language-btn.selected {
-    background: #B76E79;
-    color: white;
-    border-color: #D8B68A;
-}
-
-.language-btn:active {
-    transform: scale(0.97);
-}
-
-.language-btn:focus-visible,
-.switch-language:focus-visible {
-    outline: 3px solid #854F5B;
-    outline-offset: 3px;
-}
-
-/* INVITATION DETAILS */
-
-.invitation-details {
-    position: relative;
-    min-height: 100vh;
-    min-height: 100dvh;
-
-    padding: 70px 20px 50px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background:
-        linear-gradient(
-            rgba(255, 249, 242, 0.88),
-            rgba(245, 221, 224, 0.94)
-        ),
-        url("assets/backgrounds/royal-entrance.png");
-
-    background-size: cover;
-    background-position: center;
-    text-align: center;
-}
-
-.details-card {
-    width: 100%;
-    max-width: 440px;
-    padding: 35px 22px;
-
-    background: rgba(255, 249, 242, 0.9);
-    border: 1px solid #D8B68A;
-    border-radius: 20px;
-
-    box-shadow: 0 10px 35px rgba(133, 79, 91, 0.15);
-}
-
-.details-card h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(48px, 12vw, 70px);
-    font-weight: 400;
-    color: #B76E79;
-    margin: 18px 0;
-}
-
-.details-card h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: #854F5B;
-    margin: 28px 0 10px;
-}
-
-.details-card p {
-    font-size: 13px;
-    line-height: 1.8;
-    color: #854F5B;
-}
-
-.switch-language {
-    min-height: 44px;
-    margin-bottom: 20px;
-    padding: 10px 20px;
-
-    background: #B76E79;
-    color: white;
-    border: 1px solid #D8B68A;
-    border-radius: 30px;
-
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    cursor: pointer;
-}
-
-/* SMALL MOBILE SCREENS */
-
-@media (max-width: 375px) {
-    .language-buttons {
-        gap: 8px;
-    }
-
-    .language-btn {
-        min-width: 108px;
-        padding: 12px 14px;
-        font-size: 11px;
-    }
-
-    .details-card {
-        padding: 28px 16px;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .language-btn {
-        transition: none;
-    }
-}
-
-/* MOBILE LAYOUT REFINEMENTS  */
-
-@media (max-width: 600px) {
-
-    .hero {
-        padding: 24px 16px;
-        background-position: center center;
-    }
-
-    .hero-content {
-        width: 100%;
-        max-width: 340px;
-        padding: 20px 8px;
-    }
-
-    /* Smaller, elegant title */
-    .hero h1 {
-        font-size: clamp(40px, 10.5vw, 52px);
-        line-height: 1.25;
-        margin: 22px 0;
-        overflow-wrap: normal;
-    }
-
-    /* Welcome text */
-    .hero .subtitle {
-        font-size: 10px;
-        letter-spacing: 1.5px;
-        line-height: 1.7;
-    }
-
-    /* Language instruction */
-    .hero .description {
-        font-size: 10px;
-        letter-spacing: 1px;
-        line-height: 1.8;
-        max-width: 270px;
-        margin: 0 auto;
-        text-wrap: balance;
-    }
-
-    /* Language buttons */
-    .language-buttons {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 25px;
-    }
-
-    .language-btn {
-        min-width: 0;
-        width: 125px;
-        min-height: 48px;
-        padding: 12px 14px;
-        font-size: 11px;
-        background: rgba(255, 249, 242, 0.94);
-    }
-
-    #openInvitation {
-        margin-top: 24px;
-        font-size: 11px;
-    }
-}
-
-/* Extra-small phones */
-
-@media (max-width: 360px) {
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .hero .subtitle {
-        font-size: 9px;
-    }
-
-    .language-btn {
-        width: 115px;
-    }
-}
-
-.spanish-instruction {
-    display: block;
-    margin-top: 5px;
-    font-size: 10px;
-    letter-spacing: 1px;
-}
-
-
-/* ROYAL ROSE GOLD - MOBILE POLISH */
-
-/* Language instructions */
-.language-instruction {
-    width: 100%;
-    max-width: 260px;
-    margin: 0 auto;
-    padding: 12px 16px;
-
-    background: rgba(255, 249, 242, 0.68);
-    border: 1px solid rgba(216, 182, 138, 0.6);
-    border-radius: 14px;
-
-    box-shadow: 0 4px 18px rgba(133, 79, 91, 0.08);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
-.language-instruction p {
-    font-family: 'Cinzel', serif;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 1.8;
-    color: #713E4C;
-    text-align: center;
-}
-
-.language-instruction p + p {
-    margin-top: 3px;
-    font-size: 10px;
-    font-weight: 400;
-}
-
-/* Refine the entire opening */
-
-@media (max-width: 600px) {
-
-    .hero-content {
-        width: 100%;
-        max-width: 330px;
-        padding: 20px 8px;
-    }
-
-    /* Welcome text */
-
-    .hero .subtitle {
-        font-size: 10px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        margin-bottom: 20px;
-        color: #713E4C;
-    }
-
-    /* Main title */
-
-    .hero h1 {
-        font-size: clamp(39px, 10vw, 48px);
-        line-height: 1.25;
-        margin: 12px 0 30px;
-        color: #B76E79;
-    }
-
-    /* Language buttons */
-
-    .language-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 12px;
-        margin-top: 22px;
-    }
-
-    .language-btn {
-        width: 120px;
-        min-width: 0;
-        min-height: 48px;
-        padding: 12px 10px;
-
-        background: rgba(255, 249, 242, 0.96);
-        border: 1.5px solid #C99A78;
-        border-radius: 30px;
-
-        color: #713E4C;
-        font-size: 11px;
-        font-weight: 600;
-
-        box-shadow: 0 4px 12px rgba(133, 79, 91, 0.12);
-    }
-
-    .language-btn.selected {
-        background: #B76E79;
-        color: white;
-    }
-}
-
-/* Very small phones */
-
-@media (max-width: 360px) {
-    .hero-content {
-        max-width: 300px;
-    }
-
-    .hero h1 {
-        font-size: 38px;
-    }
-
-    .language-instruction {
-        max-width: 235px;
-    }
-
-    .language-btn {
-        width: 110px;
-    }
-}
-
-
-/* Elegant rose-gold title */
-.hero h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: clamp(42px, 11vw, 58px);
-    font-weight: 400;
-    line-height: 1.35;
-
-    max-width: 100%;
-    margin: 18px auto 28px;
-    padding: 8px 4px;
-
-    color: #B76E79;
-
-    background: linear-gradient(
-        110deg,
-        #884758 0%,
-        #B76E79 20%,
-        #E9B9AC 38%,
-        #FFF0CC 48%,
-        #B76E79 60%,
-        #965265 80%,
-        #884758 100%
-    );
-
-    background-size: 250% 100%;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    filter: drop-shadow(0 2px 2px rgba(92, 43, 55, 0.35))
-            drop-shadow(0 0 8px rgba(255, 234, 201, 0.65));
-
-    animation: royalShimmer 6s ease-in-out infinite;
-}
-
-/* Moving metallic highlight */
-@keyframes royalShimmer {
-    0%, 100% {
-        background-position: 100% center;
-    }
-
-    50% {
-        background-position: 0% center;
-    }
-}
-
-/* Small phone adjustments */
-@media (max-width: 375px) {
-    .hero h1 {
-        font-size: 40px;
-        padding: 6px 2px;
-    }
-}
-
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
+    .hero-content,
     .hero h1 {
         animation: none;
     }
-}
 
+    .language-btn,
+    #openInvitation,
+    .switch-language {
+        transition: none;
+    }
+}
