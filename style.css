@@ -709,3 +709,66 @@ body {
         width: 110px;
     }
 }
+
+
+/* Elegant rose-gold title */
+.hero h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(42px, 11vw, 58px);
+    font-weight: 400;
+    line-height: 1.35;
+
+    max-width: 100%;
+    margin: 18px auto 28px;
+    padding: 8px 4px;
+
+    color: #B76E79;
+
+    background: linear-gradient(
+        110deg,
+        #884758 0%,
+        #B76E79 20%,
+        #E9B9AC 38%,
+        #FFF0CC 48%,
+        #B76E79 60%,
+        #965265 80%,
+        #884758 100%
+    );
+
+    background-size: 250% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 2px 2px rgba(92, 43, 55, 0.35))
+            drop-shadow(0 0 8px rgba(255, 234, 201, 0.65));
+
+    animation: royalShimmer 6s ease-in-out infinite;
+}
+
+/* Moving metallic highlight */
+@keyframes royalShimmer {
+    0%, 100% {
+        background-position: 100% center;
+    }
+
+    50% {
+        background-position: 0% center;
+    }
+}
+
+/* Small phone adjustments */
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 40px;
+        padding: 6px 2px;
+    }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .hero h1 {
+        animation: none;
+    }
+}
+
