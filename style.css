@@ -593,3 +593,119 @@ body {
     font-size: 10px;
     letter-spacing: 1px;
 }
+
+
+/* ROYAL ROSE GOLD - MOBILE POLISH */
+
+/* Language instructions */
+.language-instruction {
+    width: 100%;
+    max-width: 260px;
+    margin: 0 auto;
+    padding: 12px 16px;
+
+    background: rgba(255, 249, 242, 0.68);
+    border: 1px solid rgba(216, 182, 138, 0.6);
+    border-radius: 14px;
+
+    box-shadow: 0 4px 18px rgba(133, 79, 91, 0.08);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.language-instruction p {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: #713E4C;
+    text-align: center;
+}
+
+.language-instruction p + p {
+    margin-top: 3px;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+/* Refine the entire opening */
+
+@media (max-width: 600px) {
+
+    .hero-content {
+        width: 100%;
+        max-width: 330px;
+        padding: 20px 8px;
+    }
+
+    /* Welcome text */
+
+    .hero .subtitle {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 1.5px;
+        margin-bottom: 20px;
+        color: #713E4C;
+    }
+
+    /* Main title */
+
+    .hero h1 {
+        font-size: clamp(39px, 10vw, 48px);
+        line-height: 1.25;
+        margin: 12px 0 30px;
+        color: #B76E79;
+    }
+
+    /* Language buttons */
+
+    .language-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .language-btn {
+        width: 120px;
+        min-width: 0;
+        min-height: 48px;
+        padding: 12px 10px;
+
+        background: rgba(255, 249, 242, 0.96);
+        border: 1.5px solid #C99A78;
+        border-radius: 30px;
+
+        color: #713E4C;
+        font-size: 11px;
+        font-weight: 600;
+
+        box-shadow: 0 4px 12px rgba(133, 79, 91, 0.12);
+    }
+
+    .language-btn.selected {
+        background: #B76E79;
+        color: white;
+    }
+}
+
+/* Very small phones */
+
+@media (max-width: 360px) {
+    .hero-content {
+        max-width: 300px;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .language-instruction {
+        max-width: 235px;
+    }
+
+    .language-btn {
+        width: 110px;
+    }
+}
